@@ -1,0 +1,15 @@
+.random-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+h5 {
+  color: #757575;
+  font-weight: 500;
+}
+
+hr {
+  background-color: #515050;
+  width: 70%;
+}

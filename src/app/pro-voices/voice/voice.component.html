@@ -1,0 +1,12 @@
+<div class="voice-container pr-5 mb-3">
+  <div class="favourite" (click)="favToggle()">
+    <img
+      class="p-2"
+      [src]="voice.isFav ? '../../../../assets/voice-favourite.svg' : '../../../../assets/voice-favourite-off.svg'"
+      alt="favourite">
+  </div>
+  <div class="mb-2" (click)="onSelect()" [ngClass]="this.currentVoice === this.voice ? 'voice-active' : 'voice'">
+      <img src="../../../../assets/{{ voice.icon }}" alt="voice icon">
+  </div>
+  <p [ngClass]="this.currentVoice === this.voice ? 'p-active' : 'p-regular'">{{ voice.name }}</p>
+</div>

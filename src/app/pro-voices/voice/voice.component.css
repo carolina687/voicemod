@@ -1,0 +1,45 @@
+.voice-container {
+  cursor: pointer;
+  text-align: center;
+  font-size: small;
+  position: relative;
+}
+
+.p-regular {color: #D0D0D0;}
+.p-active {color: #00d5ff;}
+
+.voice {
+  background-color: #D2D2D2;
+  border-radius: 100%;
+}
+
+.voice-active {
+  background-color: #00d5ff;
+  border-radius: 100%;
+}
+
+.favourite {
+  margin-bottom: -25px;
+  display: none;
+  position: absolute;
+  left: 50%;
+}
+
+.favourite img {
+  background-color: #fff;
+  border-radius: 100%;
+}
+
+.voice-container:hover > .favourite {
+  display: inline-block;
+}
+
+.voice-container:hover > .voice {
+  background-color: #fff;
+}
+
+.voice-container:hover > .p-regular {
+  color: #fff;
+}
+
+
