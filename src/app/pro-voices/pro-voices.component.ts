@@ -11,7 +11,7 @@ import { VoiceManagerService } from 'src/app/services/voice-manager.service';
   styleUrls: ['./pro-voices.component.css']
 })
 export class ProVoicesComponent implements OnInit, OnDestroy {
-  voices: Voice[];
+  voices: Voice[] = [];
   subscription: Subscription;
   voiceSelected: Voice;
   randomNumber: number;
@@ -23,7 +23,7 @@ export class ProVoicesComponent implements OnInit, OnDestroy {
   ) {
     this.subscription = this.voiceManagerService.getVoices().subscribe(
       data => this.voices = data
-    )
+    );
   }
 
   ngOnInit() {
@@ -48,10 +48,6 @@ export class ProVoicesComponent implements OnInit, OnDestroy {
     this.voiceSelected = voice;
   }
 
-  ngOnDestroy() {
-    this.subscription.unsubscribe();
-  }
-
   onRandom() {
     this.randomNumber = Math.floor(Math.random() * (this.voices.length)) + 1;
     this.voiceSelected = this.voices[this.randomNumber];
@@ -71,7 +67,6 @@ export class ProVoicesComponent implements OnInit, OnDestroy {
     } else {
       this.filteredVoices = this.voices.filter(voice => voice.tags.includes(category));
     }
-    console.log(this.filteredVoices);
   }
 
   onSearch(value: string) {
@@ -90,5 +85,9 @@ export class ProVoicesComponent implements OnInit, OnDestroy {
     } else {
 			this.filteredVoices = this.voices;
 		}
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 }

@@ -20,5 +20,4 @@ export class VoiceComponent {
   onSelect() {
     this.voiceSelected.emit(this.voice);
   }
-
 }

@@ -24,7 +24,7 @@ export class VoiceManagerService {
     });
   }
 
-  toggleFav(voiceId: string) {
+  toggleFav(voiceId: string): void {
     this.voices = this.voices.map(voice => {
       if (voice.id === voiceId) {
         voice.isFav = !voice.isFav;

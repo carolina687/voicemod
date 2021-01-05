@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 // import { HttpClient } from '@angular/common/http';
+
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
@@ -14,13 +15,19 @@ export class VoiceDataService {
 
   getVoices(): Observable<Voice[]> {
 
-    // The following http request couldn't be done because I was provided with the json file,
-    // but I leave it here commented as it is how should be done if we'd like to fetch
-    // it from an api
+    /*  The following http request couldn't be done because I was provided with the json file,
+    but I leave it here commented as it is how should be done if we'd like to fetch
+    it from an api
 
-    // return this.httpClient.get<Voices[]>(
-    //   'url.voices.json'
-    // )
+    return this.httpClient.get<Voices[]>(
+      'http://voicesapiendpoint.json').pipe(
+        map(responseData => {
+          return responseData.map(item => ({
+            ...item,
+            isFav: false
+          }))
+        })
+      ); */
 
     return voicesjson.pipe(
       map(response => {

@@ -1,7 +1,7 @@
 <div class="d-flex">
   <img src="../../../assets/filter.svg" alt="categories">
-  <select #categorie_dropdown class="dropdown py-1 px-3" (change)="categoryChange(categorie_dropdown.value)">
+  <select #categorie_dropdown class="dropdown py-2 px-3" (change)="categoryChange(categorie_dropdown.value)">
     <option value="all" selected>All</option>
-    <option [value]="[category]" *ngFor="let category of uniqueCategories"> {{ category }}</option>
+    <option [value]="[category]" *ngFor="let category of uniqueCategories"> {{ category | titlecase }}</option>
   </select>
 </div>

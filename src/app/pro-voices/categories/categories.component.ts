@@ -6,9 +6,10 @@ import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./categories.component.css']
 })
 export class CategoriesComponent implements OnInit {
-  @Input() categories: [];
-  uniqueCategories = [];
+  @Input() categories: string[];
   @Output() selectedCat = new EventEmitter<string>();
+
+  uniqueCategories = [];
 
   ngOnInit() {
     this.categories.map((element) => {

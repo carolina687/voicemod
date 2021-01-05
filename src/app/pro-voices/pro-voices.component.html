@@ -1,17 +1,20 @@
-<div class="d-md-flex justify-content-between pt-3">
+<div class="d-md-flex justify-content-between pt-3 container">
   <app-searcher
     (searchedValue)="onSearch($event)">
   </app-searcher>
-  <div class="d-flex mt-3 mt-md-0 justify-content-between">
+  <div class="d-block d-sm-flex mt-3 mt-md-0 justify-content-between">
     <app-categories
       [categories]="categories"
       (selectedCat)="catChange($event)">
     </app-categories>
-    <app-order class="ml-4"
-      (onOrderChange)="orderChange($event)">
-    </app-order>
-    <div class="mx-3 random-button" (click)="onRandom()">
-      <img src="../../../assets/button-random.svg" alt="random">
+    <div class="d-flex mx-0 mt-3 mt-sm-0 justify-content-between">
+      <app-order
+        class="ml-0 ml-md-4"
+        (onOrderChange)="orderChange($event)">
+      </app-order>
+      <div class="mx-3 random-button" (click)="onRandom()">
+        <img src="../../../assets/button-random.svg" alt="random">
+      </div>
     </div>
   </div>
 </div>
@@ -19,7 +22,7 @@
 <div class="container pt-5" *ngIf="favVoices().length > 0">
   <div class="d-block d-sm-flex mb-3">
     <h5 class="mt-1">FAVOURITE VOICES</h5>
-    <hr class="ml-0 ml-sm-3">
+    <hr class="hr-fav ml-0 ml-sm-4">
   </div>
   <div class="d-flex flex-wrap">
     <app-voice
@@ -35,7 +38,7 @@
 <div class="container pt-5">
   <div class="d-block d-sm-flex mb-3">
     <h5 class="mt-1">PRO VOICES</h5>
-    <hr class="ml-0 ml-sm-3">
+    <hr class="hr-pro ml-0 ml-sm-3">
   </div>
   <div class="d-flex flex-wrap">
     <app-voice

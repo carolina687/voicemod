@@ -11,5 +11,44 @@ h5 {
 
 hr {
   background-color: #515050;
-  width: 70%;
+}
+
+.hr-pro {
+  width: 85%;
+}
+
+.hr-fav {
+  width: 79%;
+}
+
+@media (max-width: 1200px) {
+  .hr-fav {
+    width: 77%;
+  }
+}
+
+@media (max-width: 992px) {
+  .hr-pro {
+    width: 80%;
+  }
+
+  .hr-fav {
+    width: 70%;
+  }
+}
+
+@media (max-width: 768px) {
+  .hr-pro {
+    width: 73%;
+  }
+
+  .hr-fav {
+    width: 58%;
+  }
+}
+
+@media (max-width: 576px) {
+  .hr-pro, .hr-fav {
+    width: 100%;
+  }
 }
