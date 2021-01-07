@@ -46,6 +46,12 @@ describe('VoiceManagerService', () => {
   });
 
   it('should fetch voices', () => {
+    jest.spyOn(spectator.service, "fetchVoices");
+
+    expect(spectator.service.fetchVoices).toBeTruthy();
+  });
+
+  it('should assign voices correctly', () => {
     jest.spyOn(spectator.service.voicesSubject, "next");
     jest.spyOn(spectator.service, "getVoices").mockReturnValue(voicesSubject);
 
@@ -60,7 +66,6 @@ describe('VoiceManagerService', () => {
     jest.spyOn(spectator.service.voicesSubject, "next");
 
     spectator.service.toggleFav(voices[1].id);
-
     let favVoice = spectator.service.voices.find(currentVoice => currentVoice.id === voices[1].id);
 
     expect(favVoice.isFav).toEqual(true);

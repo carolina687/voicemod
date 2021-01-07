@@ -41,7 +41,7 @@ describe('VoiceComponent', () => {
 
     spectator.component.favToggle();
 
-    expect(spectator.component.onFavToggle.emit).toHaveBeenCalled();
+    expect(spectator.component.onFavToggle.emit).toHaveBeenCalledWith(spectator.component.voice.id);
   })
 
   it('should emit onSelect', () => {
@@ -49,6 +49,6 @@ describe('VoiceComponent', () => {
 
     spectator.component.onSelect();
 
-    expect(spectator.component.voiceSelected.emit).toHaveBeenCalled();
+    expect(spectator.component.voiceSelected.emit).toHaveBeenCalledWith(spectator.component.voice);
   })
 });

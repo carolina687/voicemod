@@ -21,8 +21,7 @@ describe('OrderComponent', () => {
 
     spectator.component.orderChange();
 
-    expect(spectator.component.onOrderChange.emit).toHaveBeenCalled();
-    expect(spectator.component.onOrderChange.emit).toBeTruthy();
+    expect(spectator.component.onOrderChange.emit).toHaveBeenCalledWith(false);
   })
 });
 
